@@ -33,6 +33,17 @@ CREATE TABLE IF NOT EXISTS Pacientes (
     uf VARCHAR(255)
 );
 
+CREATE TABLE IF NOT EXISTS Usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    login VARCHAR(100) NOT NULL,
+    senha VARCHAR(255) NOT NULL
+);
+
+
+-- Populating the Usuarios table with password 123456, in BCrypt algorithm format
+INSERT INTO Usuarios (login, senha) VALUES ('usuario.teste@email.com', '$2a$10$Y50UaMFOxteibQEYLrwuHeehHYfcoafCopUazP12.rqB41bsolF5.');
+
+
 -- Populating the Medicos table
 INSERT INTO Medicos (ativo, crm, email, nome, telefone, especialidade, bairro, cep, cidade, complemento, logradouro, numero, uf)
 VALUES (true, 'CRM1', 'medico1@example.com', 'Médico 1', '123456789', 'ORTOPEDIA', 'Bairro1', '12345', 'Cidade1', 'Complemento1', 'Logradouro1', '123', 'UF1'),
