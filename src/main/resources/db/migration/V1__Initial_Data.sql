@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS Usuarios (
 
 
 -- Populating the Usuarios table with password 123456, in BCrypt algorithm format
-INSERT INTO Usuarios (login, senha) VALUES ('usuario.teste@email.com', '$2a$10$Y50UaMFOxteibQEYLrwuHeehHYfcoafCopUazP12.rqB41bsolF5.');
+INSERT INTO Usuarios (login, senha) VALUES ('admin@email.com', '$2a$10$Y50UaMFOxteibQEYLrwuHeehHYfcoafCopUazP12.rqB41bsolF5.');
 
 
 -- Populating the Medicos table
