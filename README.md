@@ -10,6 +10,7 @@ Este projeto de demonstração apresenta uma implementação de autenticação u
 - Uso de recursos avançados do Spring Boot
 - Implementação de endpoints RESTful para operações CRUD
 - Exemplo de validações com Bean Validation
+- Uso de regex para validação de campos
 - Gerenciamento de diferentes níveis de permissões de acesso
 
 ## Endpoints e Permissões
