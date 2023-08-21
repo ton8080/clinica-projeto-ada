@@ -57,10 +57,15 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public void deletar(Long id, String usuarioLogadoLogin) throws AccessDeniedException {
 		UsuarioEntity usuarioLogado = usuarioRepository.findByUserLogin(usuarioLogadoLogin);
+		UsuarioEntity usuario = usuarioRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 		
         if (usuarioLogado == null || !usuarioLogado.getLogin().equals("admin@email.com")) {
             throw new AccessDeniedException("Apenas o administrador pode deletar os usuários.");
         }
+        
+        if (usuario.getLogin().equals(usuarioLogado.getLogin())&& usuario.getId().equals(usuarioLogado.getId())) {
+        	throw new AccessDeniedException("Não é possivel excluir o Adm.");
+		}
 
 		usuarioRepository.delete(usuarioLogado);
 	}
